@@ -10,9 +10,10 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" defer src="/menu.js"></script>
     <title>Cozy Cup</title>
   </head>
-  <body class="font-inter">
+  <body class="font-inter text-base leading-normal text-zinc-900">
     <script>
       tailwind.config = {
         theme: {
@@ -25,32 +26,14 @@
       };
     </script>
     <div
-      class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('https://img.freepik.com/free-vector/hand-drawn-coffee-bean-drawing-pattern_23-2150639140.jpg?t=st=1735802187~exp=1735805787~hmac=0ac9a3ff9c89cd366f6e05487fc2991d5893d92e84c44f68a7c4d18bae24fedc&w=826')]"
+      class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('https://img.freepik.com/premium-vector/coffee-menu-restaurant-food-template_1049085-507.jpg?w=740')]"
     ></div>
     <div
-      class="container max-w-5xl mx-auto flex flex-col gap-10 p-40 z-5 relative bg-white"
+      class="container max-w-5xl mx-auto flex flex-col gap-10 p-32 z-5 relative bg-[rgba(255,255,255,0.8)] backdrop-blur-sm border-x-2 border-zinc-900"
     >
-      <h1 class="text-6xl text-center">Cozy Cup</h1>
-      <h2 class="text-3xl text-center">ALL MENU</h2>
-      <div class="menu flex justify-center items-center gap-5">
-        <div class="meun__item">
-          <div class="menu__box-img w-3/12">
-            <img
-              src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"
-              alt="meun-1"
-              class="menu__img w-full"
-            />
-          </div>
-          <h3 class="menu__heading">menu1</h3>
-          <p class="menu__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            beatae natus, incidunt tempora reiciendis ex quas perferendis autem
-            eos velit temporibus voluptas dicta illum a delectus mollitia quam
-            unde quibusdam!
-          </p>
-          <div class="menu__price">50 BAHT</div>
-        </div>
-      </div>
+      <h1 class="text-6xl text-center uppercase tracking-wider">Cozy Cup</h1>
+      <h2 class="text-3xl text-center uppercase">ALL MENU</h2>
+      <div class="menu flex flex-col justify-center items-center gap-5"></div>
     </div>
   </body>
 </html>
