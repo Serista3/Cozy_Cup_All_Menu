@@ -3,18 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Cozy Cup</title>
   </head>
-  <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Hello World</h1>
-        <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
+  <body class="font-inter">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <div
+      class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('https://img.freepik.com/free-vector/hand-drawn-coffee-bean-drawing-pattern_23-2150639140.jpg?t=st=1735802187~exp=1735805787~hmac=0ac9a3ff9c89cd366f6e05487fc2991d5893d92e84c44f68a7c4d18bae24fedc&w=826')]"
+    ></div>
+    <div
+      class="container max-w-5xl mx-auto flex flex-col gap-10 p-40 z-5 relative bg-white"
+    >
+      <h1 class="text-6xl text-center">Cozy Cup</h1>
+      <h2 class="text-3xl text-center">ALL MENU</h2>
+      <div class="menu flex justify-center items-center gap-5">
+        <div class="meun__item">
+          <div class="menu__box-img w-3/12">
+            <img
+              src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"
+              alt="meun-1"
+              class="menu__img w-full"
+            />
+          </div>
+          <h3 class="menu__heading">menu1</h3>
+          <p class="menu__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+            beatae natus, incidunt tempora reiciendis ex quas perferendis autem
+            eos velit temporibus voluptas dicta illum a delectus mollitia quam
+            unde quibusdam!
+          </p>
+          <div class="menu__price">50 BAHT</div>
+        </div>
       </div>
-    </section>
+    </div>
   </body>
 </html>
