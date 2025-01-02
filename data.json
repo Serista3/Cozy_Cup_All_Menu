@@ -50,6 +50,42 @@
           "description": "Refreshing iced coffee",
           "price": 60,
           "img": "https://images.pexels.com/photos/3636959/pexels-photo-3636959.jpeg"
+        },
+        {
+          "name": "Irish Coffee",
+          "description": "Coffee mixed with Irish whiskey",
+          "price": 80,
+          "img": "https://thespicetrain.com/wp-content/uploads/2020/07/spiced-irish-coffee-20-1-0.jpg"
+        },
+        {
+          "name": "Café au Lait",
+          "description": "Coffee with steamed milk",
+          "price": 65,
+          "img": "https://www.thespruceeats.com/thmb/YEI_JAfLHd6fbfCYUukcW5E2TYg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-cafe-au-lait-recipe-1374920-hero-01-b1463e806a7947e7b8b17979ab70eab3.jpg"
+        },
+        {
+          "name": "Affogato",
+          "description": "Espresso poured over ice cream",
+          "price": 85,
+          "img": "https://www.lotusbiscoff.com/sites/default/files/2023-01/BISCOFF%20AFFOGATO-340%201x1.jpg"
+        },
+        {
+          "name": "Macchiato",
+          "description": "Espresso with a small amount of frothy milk",
+          "price": 70,
+          "img": "https://thaicoffeeshop.com/wp-content/uploads/2023/05/hot-caramel-macchiato-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%84%E0%B8%B4%E0%B8%AD%E0%B8%B2%E0%B9%82%E0%B8%95%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3.jpg"
+        },
+        {
+          "name": "Turkish Coffee",
+          "description": "Traditional Turkish coffee with a strong taste",
+          "price": 75,
+          "img": "https://tastegreatfoodie.com/wp-content/uploads/2023/08/turkish-coffee.jpg"
+        },
+        {
+          "name": "Viennese Coffee",
+          "description": "Coffee with whipped cream",
+          "price": 80,
+          "img": "https://www.luxcafeclub.com/cdn/shop/articles/Viennese_coffee_1100x.png?v=1708160583"
         }
       ]
     },
@@ -103,6 +139,42 @@
           "description": "Sweet and creamy milk tea with chewy tapioca pearls",
           "price": 65,
           "img": "https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "name": "Oolong Tea",
+          "description": "Rich and fragrant oolong tea",
+          "price": 60,
+          "img": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN538-Oolong-Tea-732x549-thumb-1-732x549.jpg"
+        },
+        {
+          "name": "Chamomile Tea",
+          "description": "Relaxing chamomile tea for a soothing experience",
+          "price": 55,
+          "img": "https://images-prod.healthline.com/hlcmsresource/images/chamomile-tea.jpg"
+        },
+        {
+          "name": "Earl Grey Tea",
+          "description": "Classic black tea with a hint of bergamot",
+          "price": 60,
+          "img": "https://roseveartea.co.uk/wp-content/uploads/2020/09/Vanilla-Earl-and-Vanilla-pods-e1603361897513.jpg"
+        },
+        {
+          "name": "Jasmine Tea",
+          "description": "Fragrant green tea with jasmine flowers",
+          "price": 55,
+          "img": "https://navvayd.com/cdn/shop/files/Jasmine_Green_Tea_1080x.jpg?v=1725262920"
+        },
+        {
+          "name": "Peppermint Tea",
+          "description": "Refreshing peppermint tea with a cool taste",
+          "price": 50,
+          "img": "https://sanchatea.com/cdn/shop/articles/Peppermint_tea.png?crop=center&height=1200&v=1655722329&width=1200"
+        },
+        {
+          "name": "Matcha Latte",
+          "description": "Creamy matcha latte with a vibrant green color",
+          "price": 70,
+          "img": "https://www.justonecookbook.com/wp-content/uploads/2022/12/Matcha-Latte-4598-I-1.jpg"
         }
       ]
     },
@@ -156,6 +228,42 @@
           "description": "Refreshing ice cream with various flavors",
           "price": 50,
           "img": "https://images.pexels.com/photos/1343504/pexels-photo-1343504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+          "name": "Apple Pie",
+          "description": "Classic apple pie with a flaky crust",
+          "price": 85,
+          "img": "https://www.ifyougiveablondeakitchen.com/wp-content/uploads/2023/04/best-apple-pie-from-scratch-500x375.jpg"
+        },
+        {
+          "name": "Tiramisu",
+          "description": "Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese",
+          "price": 90,
+          "img": "https://sugarpursuit.com/wp-content/uploads/2023/03/Easy-tiramisu-recipe-thumbnail.jpg"
+        },
+        {
+          "name": "Pudding",
+          "description": "Creamy vanilla pudding",
+          "price": 55,
+          "img": "https://fullofplants.com/wp-content/uploads/2023/04/vegan-semolina-pudding-with-caramel-sauce-easy-french-inspired-dessert-thumb.jpg"
+        },
+        {
+          "name": "Lemon Tart",
+          "description": "Tangy lemon tart with a buttery crust",
+          "price": 80,
+          "img": "https://richanddelish.com/wp-content/uploads/2022/07/lemon-tart.jpg"
+        },
+        {
+          "name": "Profiteroles",
+          "description": "Cream-filled choux pastries with chocolate sauce",
+          "price": 85,
+          "img": "https://www.browneyedbaker.com/wp-content/uploads/2021/04/profiteroles-8-square-1.jpg"
+        },
+        {
+          "name": "Banoffee Pie",
+          "description": "Banana and toffee pie with a biscuit base",
+          "price": 90,
+          "img": "https://static01.nyt.com/images/2019/07/18/dining/ml-banoffee-pie/ml-banoffee-pie-superJumbo.jpg"
         }
       ]
     }
