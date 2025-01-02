@@ -17,27 +17,27 @@ const createMenuEl = async function () {
     r.items.forEach((i) => {
       const htmlCode = `
         <div
-          class="meun__item flex justify-center gap-10 overflow-hidden p-9 w-full border-b-2 border-zinc-900"
+          class="meun__item flex max-md:flex-col max-md:items-center justify-center gap-10 overflow-hidden p-9 w-full border-b-2 border-zinc-900"
         >
-          <div class="menu__box-img">
+          <div class="menu__box-img w-1/2 h-48 rounded-lg shadow overflow-hidden max-md:w-8/12">
             <img
               src=${i.img}
               alt="meun-item"
-              class="menu__img w-64 h-48 object-cover rounded-lg shadow"
+              class="menu__img w-full h-full object-cover object-center"
             />
           </div>
-          <div class="menu__detail text-zinc-900 flex flex-col gap-8 relative w-full">
-            <h3 class="menu__heading text-3xl font-medium">${i.name}</h3>
+          <div class="menu__detail text-zinc-900 flex flex-col gap-8 relative w-full max-md:w-8/12 max-md:text-center">
+            <h3 class="menu__heading text-3xl font-medium max-xl:text-2xl max-lg:text-xl">${i.name}</h3>
             <p class="menu__description font-light leading-relaxed">
               ${i.description}
             </p>
             <div
-              class="menu__price absolute top-0 right-0 bg-emerald-600 rounded-xl px-4 py-2 text-white"
+              class="menu__price absolute max-md:relative max-md:mx-auto top-0 right-0 bg-emerald-600 rounded-xl px-4 py-2 text-white max-xl:text-sm max-lg:text-xs"
             >
               ${i.price} BAHT
             </div>
             <div
-              class="menu__type absolute top-0 right-28 bg-zinc-900 rounded-xl px-4 py-2 text-white uppercase backdrop-blur-sm"
+              class="menu__type absolute max-md:hidden top-0 right-28 max-xl:right-24 bg-zinc-900 rounded-xl px-4 py-2 text-white uppercase backdrop-blur-sm max-xl:text-sm max-lg:text-xs"
             >
               ${r.category}
             </div>

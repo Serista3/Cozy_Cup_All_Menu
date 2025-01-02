@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,9 @@
     <script type="module" defer src="/menu.js"></script>
     <title>Cozy Cup</title>
   </head>
-  <body class="font-inter text-base leading-normal text-zinc-900">
+  <body
+    class="font-inter text-base leading-normal text-zinc-900 max-xl:text-sm"
+  >
     <script>
       tailwind.config = {
         theme: {
@@ -29,10 +31,14 @@
       class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('https://img.freepik.com/premium-vector/coffee-menu-restaurant-food-template_1049085-507.jpg?w=740')]"
     ></div>
     <div
-      class="container max-w-5xl mx-auto flex flex-col gap-10 p-32 z-5 relative bg-[rgba(255,255,255,0.8)] backdrop-blur-sm border-x-2 border-zinc-900"
+      class="container max-w-5xl mx-auto flex flex-col gap-10 p-32 max-xl:p-24 max-lg:p-16 max-md:px-0 z-5 relative bg-[rgba(255,255,255,0.8)] backdrop-blur-sm border-x-2 border-zinc-900"
     >
-      <h1 class="text-6xl text-center uppercase tracking-wider">Cozy Cup</h1>
-      <h2 class="text-3xl text-center uppercase">ALL MENU</h2>
+      <h1
+        class="text-6xl text-center uppercase tracking-wider max-xl:text-5xl max-md:text-4xl"
+      >
+        Cozy Cup
+      </h1>
+      <h2 class="text-3xl max-xl:text-2xl text-center uppercase">ALL MENU</h2>
       <div class="menu flex flex-col justify-center items-center gap-5"></div>
     </div>
   </body>
