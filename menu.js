@@ -24,6 +24,7 @@ const createMenuEl = async function () {
               src=${i.img}
               alt="meun-item"
               class="menu__img w-full h-full object-cover object-center"
+              loading="lazy"
             />
           </div>
           <div class="menu__detail text-zinc-900 flex flex-col gap-8 relative w-full max-md:w-8/12 max-md:text-center">
@@ -32,12 +33,12 @@ const createMenuEl = async function () {
               ${i.description}
             </p>
             <div
-              class="menu__price absolute max-md:relative max-md:mx-auto top-0 right-0 bg-emerald-600 rounded-xl px-4 py-2 text-white max-xl:text-sm max-lg:text-xs"
+              class="menu__price absolute max-md:relative max-md:mx-auto top-0 right-0 bg-emerald-600 rounded-xl px-4 py-2 text-white max-xl:text-sm max-lg:text-xs font-semibold"
             >
               ${i.price} BAHT
             </div>
             <div
-              class="menu__type absolute max-md:hidden top-0 right-28 max-xl:right-24 bg-zinc-900 rounded-xl px-4 py-2 text-white uppercase backdrop-blur-sm max-xl:text-sm max-lg:text-xs"
+              class="menu__type absolute max-md:hidden top-0 right-28 max-xl:right-24 bg-zinc-900 rounded-xl px-4 py-2 text-white uppercase backdrop-blur-sm max-xl:text-sm max-lg:text-xs font-semibold"
             >
               ${r.category}
             </div>
