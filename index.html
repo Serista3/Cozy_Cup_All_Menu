@@ -14,14 +14,17 @@
     <script defer src="menu.js" type="module"></script>
     <title>Cozy Cup</title>
   </head>
-  <body
-    class="font-inter text-base leading-normal text-zinc-900 max-xl:text-sm"
-  >
+  <body class="font-inter text-base leading-normal text-white max-xl:text-sm">
     <div
-      class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('/img/other/bg-img.avif')]"
+      class="progress-bar fixed top-0 left-0 bg-zinc-900 w-full h-2 z-50 shadow"
+    >
+      <div class="progress bg-emerald-600 w-0 h-full transition-all"></div>
+    </div>
+    <div
+      class="fixed top-0 left-0 w-full h-screen z-0 bg-[url('/img/other/bg-img.jpg')] bg-no-repeat bg-center bg-cover brightness-50 grayscale"
     ></div>
     <div
-      class="container max-w-5xl mx-auto flex flex-col gap-10 p-32 max-xl:p-24 max-lg:p-16 max-md:px-0 z-5 relative bg-[rgba(255,255,255,0.9)] backdrop-blur-sm border-x-2 border-zinc-900"
+      class="container max-w-5xl mx-auto flex flex-col gap-10 p-32 max-xl:p-24 max-lg:p-16 max-md:px-0 z-5 relative bg-[rgba(20,20,20,0.9)] backdrop-blur-sm"
     >
       <h1
         class="text-6xl text-center uppercase tracking-wider max-xl:text-5xl max-md:text-4xl"
@@ -29,23 +32,23 @@
         Cozy Cup
       </h1>
       <h2 class="text-3xl max-xl:text-2xl text-center uppercase">ALL MENU</h2>
-      <div class="menu flex flex-col justify-center items-center gap-5"></div>
+      <div class="menu flex flex-col justify-center items-center gap-10"></div>
       <div
-        class="ref uppercase text-center mt-16 flex flex-col justify-center items-center gap-5"
+        class="ref uppercase text-center flex flex-col justify-center items-center gap-5"
       >
         <div class="ref__heading text-2xl">ref</div>
         <ul class="ref__list flex gap-10">
           <a
-            href="https://unsplash.com/"
-            class="transition-all hover:bg-black hover:text-white"
+            href="/source/img-source.txt"
+            class="transition-all hover:bg-white hover:text-zinc-900"
             target="_blank"
-            >unsplash</a
+            >Image</a
           >
           <a
-            href="https://www.pexels.com/th-th/"
-            class="transition-all hover:bg-black hover:text-white"
+            href="/source/content-source.txt"
+            class="transition-all hover:bg-white hover:text-zinc-900"
             target="_blank"
-            >pexels</a
+            >content</a
           >
         </ul>
       </div>
