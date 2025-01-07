@@ -1,27 +1,40 @@
-import * as data from "/recieveData.js";
+//////////////////////////////////////////////
+
+// Fecth data
+const fetchData = async function () {
+  try {
+    // fetch data from json
+    const response = await fetch("dataMenu.json");
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    alert(err.message);
+  }
+};
 
 //////////////////////////////////////////////
 
 // Selecting elements
 const menu = document.querySelector(".menu");
 const progress = document.querySelector(".progress");
+const btnUp = document.querySelector(".btn-up");
 
 //////////////////////////////////////////////
 
 // Create menu item
 const createMenuEl = async function () {
   // recieve data
-  const receiveData = await data.receiveData();
+  const receiveData = await fetchData();
 
   // create html code
   receiveData.products.forEach((r) => {
     // add header
-    const headCode = `<h2 class="text-3xl max-xl:text-2xl text-center uppercase mt-14 w-full text-white p-3 font-medium border-y-2">${r.category}</h2>`;
+    const headCode = `<h2 class="text-3xl max-xl:text-2xl text-center uppercase mt-14 w-full text-white p-3 font-medium heading-secondary" id="${r.category}">${r.category}</h2>`;
     menu.insertAdjacentHTML("beforeend", headCode);
     r.items.forEach((i) => {
       const htmlCode = `
         <div
-          class="meun__item flex max-md:flex-col max-md:items-center justify-center gap-10 overflow-hidden p-9 w-full rounded-md shadow-lg"
+          class="meun__item flex max-md:flex-col max-md:items-center justify-center gap-10 overflow-hidden py-9 w-full rounded-md"
         >
           <div class="menu__box-img w-1/2 h-48 rounded-lg shadow overflow-hidden max-md:w-8/12">
             <img
@@ -55,13 +68,35 @@ const createMenuEl = async function () {
 
 //////////////////////////////////////////////
 
+// Handle click btn-up
+const removeClassBtnUp = function () {
+  btnUp.classList.remove("invisible");
+  btnUp.classList.remove("opacity-0");
+  btnUp.classList.remove("translate-y-6");
+};
+
+const addClassBtnUp = function () {
+  btnUp.classList.add("invisible");
+  btnUp.classList.add("opacity-0");
+  btnUp.classList.add("translate-y-6");
+};
+
+const scrollToUp = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+//////////////////////////////////////////////
+
 // Progress bar
 const processProBar = function () {
   // scroll value
   const scrollHeight = window.scrollY;
 
   // document height
-  const documentHeight = window.document.body.offsetHeight;
+  const documentHeight = document.body.offsetHeight;
 
   // viewport height
   const viewportHeight = window.innerHeight;
@@ -71,6 +106,13 @@ const processProBar = function () {
 
   // change style width progress
   progress.style.width = `${result}%`;
+
+  // show btn up
+  if (result > 40) {
+    removeClassBtnUp();
+  } else {
+    addClassBtnUp();
+  }
 };
 
 //////////////////////////////////////////////
@@ -79,6 +121,7 @@ const processProBar = function () {
 const intitial = function () {
   createMenuEl();
   window.addEventListener("scroll", processProBar);
+  btnUp.addEventListener("click", scrollToUp);
 };
 
 //////////////////////////////////////////////
