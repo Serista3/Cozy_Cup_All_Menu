@@ -2,3 +2,7 @@
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
 }
+
+.btn-open-nav {
+  transform: translate(-100%, -50%);
+}

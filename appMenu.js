@@ -68,6 +68,107 @@ const createMenuEl = async function () {
 
 //////////////////////////////////////////////
 
+// Navbar
+let stateOpen = 0;
+const createNavBar = function () {
+  const htmlCode = `
+    <div
+      class="nav-menu fixed bottom-0 right-0 bg-zinc-900 py-6 h-screen flex items-center w-0 justify-center transition-all z-40"
+    >
+      <div
+        class="btn-open-nav absolute left-0 top-2/4 p-2 text-2xl bg-white cursor-pointer text-zinc-900 font-medium h-screen flex justify-items-center items-center border-r-2 border-zinc-900 z-50"
+      >
+        <
+      </div>
+      <ul class="flex flex-col items-center gap-4 w-full z-50 border-none">
+        <li class="w-full">
+          <a
+            href="#Coffee"
+            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            >Coffee</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            href="#Tea"
+            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            >Tea</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            href="#Desserts"
+            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            >Dessert</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="btn-up fixed bottom-16 right-16 text-4xl rounded-full bg-white text-zinc-900 px-6 py-3 cursor-pointer shadow-md transition-all translate-y-2 opacity-0 z-50"
+    >
+      &uarr;
+    </div>`;
+
+  // insert code
+  document.body.insertAdjacentHTML("afterbegin", htmlCode);
+};
+
+const openNav = function (parent) {
+  // calc width screen
+  const widthScreen =
+    window.innerWidth - document.body.offsetWidth + document.body.offsetWidth;
+
+  // check if screen <= 600
+  if (widthScreen <= 600) {
+    parent.classList.add("w-40");
+    parent.classList.remove("w-0");
+    return;
+  }
+
+  // process class
+  parent.classList.add("w-60");
+  parent.classList.remove("w-0");
+};
+
+const hiddenNav = function (parent) {
+  // calc width screen
+  const widthScreen =
+    window.innerWidth - document.body.offsetWidth + document.body.offsetWidth;
+
+  // check if screen <= 600
+  if (widthScreen <= 600) {
+    parent.classList.add("w-0");
+    parent.classList.remove("w-40");
+    return;
+  }
+
+  // process class
+  parent.classList.add("w-0");
+  parent.classList.remove("w-60");
+};
+
+const processNav = function (e) {
+  // find parent node
+  const parent = e.target.parentNode;
+
+  // check if state open
+  if (stateOpen === 1) {
+    hiddenNav(parent);
+    stateOpen = 0;
+    return;
+  }
+
+  // add class to open nave
+  openNav(parent);
+
+  // change state
+  stateOpen = 1;
+};
+
+//////////////////////////////////////////////
+
 // Handle click btn-up
 const removeClassBtnUp = function () {
   btnUp.classList.remove("invisible");
@@ -91,7 +192,7 @@ const scrollToUp = function () {
 //////////////////////////////////////////////
 
 // Progress bar
-const processProBar = function () {
+const processBtnup = function () {
   // scroll value
   const scrollHeight = window.scrollY;
 
@@ -103,9 +204,6 @@ const processProBar = function () {
 
   // calc result
   const result = (scrollHeight / (documentHeight - viewportHeight)) * 100;
-
-  // change style width progress
-  progress.style.width = `${result}%`;
 
   // show btn up
   if (result > 40) {
@@ -120,7 +218,9 @@ const processProBar = function () {
 // Intitial
 const intitial = function () {
   createMenuEl();
-  window.addEventListener("scroll", processProBar);
+  createNavBar();
+  document.querySelector(".btn-open-nav").addEventListener("click", processNav);
+  window.addEventListener("scroll", processBtnup);
   btnUp.addEventListener("click", scrollToUp);
 };
 
