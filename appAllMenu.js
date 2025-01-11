@@ -133,20 +133,10 @@ const openNav = function (parent) {
 };
 
 const hiddenNav = function (parent) {
-  // calc width screen
-  const widthScreen =
-    window.innerWidth - document.body.offsetWidth + document.body.offsetWidth;
-
-  // check if screen <= 600
-  if (widthScreen <= 600) {
-    parent.classList.add("w-0");
-    parent.classList.remove("w-40");
-    return;
-  }
-
   // process class
   parent.classList.add("w-0");
   parent.classList.remove("w-60");
+  parent.classList.remove("w-40");
 };
 
 const processNav = function (e) {
