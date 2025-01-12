@@ -73,32 +73,37 @@ let stateOpen = 0;
 const createNavBar = function () {
   const htmlCode = `
     <div
-      class="nav-menu fixed bottom-0 right-0 bg-zinc-900 py-6 h-screen flex items-center w-0 justify-center transition-all z-40"
+      class="nav-menu fixed top-0 left-0 bg-zinc-900 h-auto flex flex-col items-center w-full justify-center z-40"
     >
       <div
-        class="btn-open-nav absolute left-0 top-2/4 p-2 text-2xl bg-white cursor-pointer text-zinc-900 font-medium h-screen flex justify-items-center items-center border-r-2 border-zinc-900 z-50"
+        class="p-3 text-2xl bg-zinc-900 font-medium w-full z-50 box-btn-open-nav"
       >
-        <
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256" class="btn-open-nav cursor-pointer">
+          <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path>
+        </svg>
       </div>
-      <ul class="flex flex-col items-center gap-4 w-full z-50 border-none">
+      <ul class="nav__list flex flex-col items-center w-full z-50 border-none transition-all h-0 invisible opacity-0">
         <li class="w-full">
           <a
             href="#Coffee"
-            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            data-value="Coffee"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
             >Coffee</a
           >
         </li>
         <li class="w-full">
           <a
             href="#Tea"
-            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            data-value="Tea"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
             >Tea</a
           >
         </li>
         <li class="w-full">
           <a
             href="#Desserts"
-            class="uppercase bg-transparent text-white p-2 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            data-value="Desserts"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
             >Dessert</a
           >
         </li>
@@ -115,43 +120,39 @@ const createNavBar = function () {
   document.body.insertAdjacentHTML("afterbegin", htmlCode);
 };
 
-const openNav = function (parent) {
-  // calc width screen
-  const widthScreen =
-    window.innerWidth - document.body.offsetWidth + document.body.offsetWidth;
-
-  // check if screen <= 600
-  if (widthScreen <= 600) {
-    parent.classList.add("w-40");
-    parent.classList.remove("w-0");
-    return;
-  }
-
+const openNav = function (sibling) {
   // process class
-  parent.classList.add("w-60");
-  parent.classList.remove("w-0");
+  sibling.classList.add("visible");
+  sibling.classList.add("h-36");
+  sibling.classList.add("opacity-100");
+  sibling.classList.remove("invisible");
+  sibling.classList.remove("h-0");
+  sibling.classList.remove("opacity-0");
 };
 
-const hiddenNav = function (parent) {
+const hiddenNav = function (sibling) {
   // process class
-  parent.classList.add("w-0");
-  parent.classList.remove("w-60");
-  parent.classList.remove("w-40");
+  sibling.classList.add("invisible");
+  sibling.classList.add("h-0");
+  sibling.classList.add("opacity-0");
+  sibling.classList.remove("visible");
+  sibling.classList.remove("h-36");
+  sibling.classList.remove("opacity-100");
 };
 
 const processNav = function (e) {
   // find parent node
-  const parent = e.target.parentNode;
-
+  const sibling =
+    e.target.closest(".btn-open-nav").parentNode.nextElementSibling;
   // check if state open
   if (stateOpen === 1) {
-    hiddenNav(parent);
+    hiddenNav(sibling);
     stateOpen = 0;
     return;
   }
 
   // add class to open nave
-  openNav(parent);
+  openNav(sibling);
 
   // change state
   stateOpen = 1;
@@ -177,6 +178,20 @@ const scrollToUp = function () {
     top: 0,
     behavior: "smooth",
   });
+};
+
+const scrollTOLink = function (e) {
+  e.preventDefault();
+  const curEl = e.target;
+  const parentCurEl = document.querySelector(".box-btn-open-nav");
+
+  // scroll to top element
+  const curElTOp =
+    document.querySelector(`#${curEl.dataset.value}`).getBoundingClientRect()
+      .top +
+    window.scrollY -
+    parentCurEl.offsetHeight;
+  window.scrollTo({ top: curElTOp, behavior: "smooth" });
 };
 
 //////////////////////////////////////////////
@@ -210,6 +225,7 @@ const intitial = function () {
   createMenuEl();
   createNavBar();
   document.querySelector(".btn-open-nav").addEventListener("click", processNav);
+  document.querySelector(".nav__list").addEventListener("click", scrollTOLink);
   window.addEventListener("scroll", processBtnup);
   btnUp.addEventListener("click", scrollToUp);
 };
