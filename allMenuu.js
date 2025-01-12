@@ -87,7 +87,7 @@ const createNavBar = function () {
           <a
             href="#Coffee"
             data-value="Coffee"
-            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800 nav__link"
             >Coffee</a
           >
         </li>
@@ -95,7 +95,7 @@ const createNavBar = function () {
           <a
             href="#Tea"
             data-value="Tea"
-            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800 nav__link"
             >Tea</a
           >
         </li>
@@ -103,7 +103,7 @@ const createNavBar = function () {
           <a
             href="#Desserts"
             data-value="Desserts"
-            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800"
+            class="uppercase bg-transparent text-white p-3 font-medium inline-block w-full text-center transition-all hover:bg-zinc-800 nav__link"
             >Dessert</a
           >
         </li>
@@ -182,7 +182,8 @@ const scrollToUp = function () {
 
 const scrollTOLink = function (e) {
   e.preventDefault();
-  const curEl = e.target;
+  const curEl = e.target.closest(".nav__link");
+  if (!curEl) return;
   const parentCurEl = document.querySelector(".box-btn-open-nav");
 
   // scroll to top element
